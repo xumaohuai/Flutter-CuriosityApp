@@ -15,21 +15,22 @@ class TabbedAppBarSample extends StatelessWidget {
             appBar: new AppBar(
               elevation: 0.0,//导航栏下面那根线
               title: new TabBar(
-              isScrollable: false,
-              unselectedLabelColor: Colors.black26,
-              labelColor: Colors.black,
-              labelStyle: TextStyle(fontSize: 18),
-              indicatorSize: TabBarIndicatorSize.label,
-                indicatorWeight: 4.0,
-                indicatorColor: Colors.yellow,
-              indicatorPadding: EdgeInsets.only(bottom: 1),
-              tabs: titleList.map((String text) {
+              isScrollable: false,//是否可滑动
+              unselectedLabelColor: Colors.black26,//未选中按钮颜色
+              labelColor: Colors.black,//选中按钮颜色
+              labelStyle: TextStyle(fontSize: 18),//文字样式
+              indicatorSize: TabBarIndicatorSize.label,//滑动的宽度是根据内容来适应,还是与整块那么大(label表示根据内容来适应)
+                indicatorWeight: 4.0,//滑块高度
+                indicatorColor: Colors.yellow,//滑动颜色
+              indicatorPadding: EdgeInsets.only(bottom: 1),//与底部距离为1
+              tabs: titleList.map((String text) {//tabs表示具体的内容,是一个数组
                 return new Tab(
                   text: text,
                 );
               }).toList(),
             ),
           ),
+              //body表示具体展示的内容
               body:TabBarView(children: [News(url: 'http://app3.qdaily.com/app3/homes/index_v2/'),News(url: 'http://app3.qdaily.com/app3/papers/index/')]) ,
         ),
       ),

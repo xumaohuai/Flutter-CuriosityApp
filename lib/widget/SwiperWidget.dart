@@ -8,11 +8,11 @@ Widget SwiperWidget(BuildContext context,List<MyBanner> bannerList){
         return Container();
       }
       DotSwiperPaginationBuilder builder = DotSwiperPaginationBuilder(
-        color: Colors.white,
-        activeColor: Colors.yellow,
-        size:7,
-        activeSize: 7,
-        space: 5
+        color: Colors.white,//未选中圆点颜色
+        activeColor: Colors.yellow,//选中圆点颜色
+        size:7,//未选中大小
+        activeSize: 7,//选中圆点大小
+        space: 5//圆点间距
       );
          widget = bannerList.length > 0 ? new Swiper(
         itemCount: bannerList.length,

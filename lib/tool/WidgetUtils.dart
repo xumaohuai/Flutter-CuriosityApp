@@ -16,16 +16,15 @@ class WidgetUtils {
     Response response = await dio.get(
         "http://app3.qdaily.com/app3/articles/detail/${id}.json");
     String htmlBody = Reslut.fromJson(response.data).response.article.body;
-    print('body = $htmlBody');
     Navigator.push(context, MaterialPageRoute(
       builder: (context) => CuriosityWebView(htmlBody: htmlBody),
     )
     );
   }
-  static Widget GetListWidget(BuildContext context, dynamic data) {
+  static Widget GetListItemWidget(BuildContext context, dynamic data) {
     Widget widget;
     if(data.runtimeType == Feed) {
-      if (data.indexType == 12) {
+      if (data.indexType != null) {
         widget = NewsListWidget(context, data);
       } else if (data.type == 2) {
         widget = ListImageTop(context, data);
@@ -35,7 +34,7 @@ class WidgetUtils {
         widget = ListImageRight(context, data);
       }
     }else{
-      widget = ColumnsListWidget(feedList: data['feedList'],lastKey: data['lastKey'],id: data['id'],showType: data['showType'],);
+      widget = ColumnsListWidget(id: data['id'],showType: data['showType'],);
     }
     return GestureDetector(
       onTap: (){

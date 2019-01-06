@@ -128,5 +128,4 @@ Widget SubscriberGridView(BuildContext context, List<Author> subscribers){
       })
     ),
   );
-
 }

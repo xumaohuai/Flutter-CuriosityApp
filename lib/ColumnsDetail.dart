@@ -60,12 +60,9 @@ class _ColumnsDetailState extends State<ColumnsDetail> {
       child: Container(
         child: ListView(
           controller: _scrollController,
-          padding: EdgeInsets.symmetric(vertical: 20),
-//        shrinkWrap: true,
-        children: <Widget>[
+          padding: EdgeInsets.all(0),
+          children: <Widget>[
           ImageTitleWidget(context, infoResponse),
-//          Container(),
-//          ColumnsDetailTypeTwo(context,feedList),
           ColumnsDetailTile(context,feedList,infoResponse),
         ],
       ),
@@ -78,7 +75,6 @@ Widget ColumnsDetailTile(BuildContext context,List<Feed> feedList,MyResponse inf
   if(feedList.length == 0 || infoResponse == null){
     return Container();
   }
-  print('showtype = ${infoResponse.column.showType} --- ${feedList.length}');
   if(infoResponse.column.showType == 1){
     return ColumnsDetailTypeOne(context, feedList);
   }

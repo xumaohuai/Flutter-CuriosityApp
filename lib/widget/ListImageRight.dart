@@ -44,8 +44,8 @@ Widget ListImageRight(
           ),
           Expanded(
             child:  Container(
-              margin: EdgeInsets.only(left: 20),
-              width: 170,
+              margin: EdgeInsets.only(left: 0),
+//              width: 170,
               height: 120,
               child: Image.network(feed.image,fit: BoxFit.fitHeight,),
             ),

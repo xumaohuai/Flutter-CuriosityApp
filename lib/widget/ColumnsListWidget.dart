@@ -9,18 +9,16 @@ import 'package:flutter_curiosity_app/ColumnsDetail.dart';
 
 class ColumnsListWidget extends StatefulWidget {
 
-  List<Feed> feedList;
-  int lastKey;
   int id;
   int showType;
-  ColumnsListWidget({Key key, @required this.feedList,this.lastKey,this.id,this.showType}) : super(key: key);
+  ColumnsListWidget({Key key, @required this.id,this.showType}) : super(key: key);
   @override
   _ColumnsListWidgetState createState() => _ColumnsListWidgetState();
 }
 
 class _ColumnsListWidgetState extends State<ColumnsListWidget> {
   List<Feed> feedList = [];
-  int lastKey;
+  int lastKey = 0;
   int id ;
   int showType;
   final ScrollController _scrollController = new ScrollController();
@@ -40,10 +38,10 @@ class _ColumnsListWidgetState extends State<ColumnsListWidget> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    this.feedList = widget.feedList;
-    this.lastKey = widget.lastKey;
+    this.feedList = [];
     this.id = widget.id;
     this.showType = widget.showType;
+    getColunmData();
     _scrollController.addListener(() {
       ///判断当前滑动位置是不是到达底部，触发加载更多回调
       if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
@@ -61,6 +59,9 @@ class _ColumnsListWidgetState extends State<ColumnsListWidget> {
 
 
 Widget ColumnsContainerWidget(BuildContext context,List<Feed> feedList,ScrollController scrollController,int showType,int id){
+  if(feedList.length == 0){
+    return Container();
+  }
   return Container(
       width: MediaQuery.of(context).size.width,
       height: 320,

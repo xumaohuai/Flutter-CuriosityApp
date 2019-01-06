@@ -5,7 +5,7 @@ import 'BaseModuleWidget.dart';
 Widget NewsListWidget(BuildContext context,Feed feed){
   return Column(
     children: <Widget>[
-      TitleWidget(context),
+      TitleWidget(context,feed),
       NewsFirstLineWidget(context, feed.newsList[0].description, feed.image),
       Container(height: 10,),
       NewsLineWidget(context, feed.newsList[1].description),
@@ -21,16 +21,21 @@ Widget NewsListWidget(BuildContext context,Feed feed){
   );
 }
 
-Widget TitleWidget(BuildContext context){
+Widget TitleWidget(BuildContext context,Feed feed){
   return Row(
     children: <Widget>[
       Container(
-        child: Image.asset('qdaily.png',fit: BoxFit.fitWidth,width: 25,height: 25,),
+        width: 30,
+        height: 30,
+        child: CircleAvatar(
+          backgroundImage: NetworkImage(feed.post.column.icon),
+        ),
+//        child: Image.network(feed.post.column.icon,width: 25,height: 25,),
         padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
       ),
       Padding(
         padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-        child: TitleLabel(context, '大公司头条',),
+        child: TitleLabel(context, feed.post.column.name,),
       )
     ],
   );

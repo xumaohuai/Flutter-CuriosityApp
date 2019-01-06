@@ -3,11 +3,7 @@ import 'model/model.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'dart:async';
 import 'package:dio/dio.dart';
-import 'package:flutter_curiosity_app/widget/ListImageRight.dart';
 import 'widget/SwiperWidget.dart';
-import 'package:flutter_curiosity_app/widget/NewsListWidget.dart';
-import 'package:flutter_curiosity_app/widget/ListImageTop.dart';
-import 'package:flutter_curiosity_app/widget/ActivityWidget.dart';
 import 'package:flutter_curiosity_app/tool/WidgetUtils.dart';
 
 class News extends StatefulWidget {
@@ -29,48 +25,40 @@ class _NewsState extends State<News> {
       }
     });
   }
+  final ScrollController _scrollController = new ScrollController();
   String url;
   dynamic lastKey = '0';
   List<dynamic> dataList = [];
-  List<MyColumn> columnList = [];
   List<MyBanner> banners = [];
   void getData()async{
     if (lastKey == '0'){
-      dataList = [];
+      dataList = [];//下拉刷新的时候将DataList制空
     }
     Dio dio = new Dio();
     Response response = await dio.get("$url$lastKey.json");
     Reslut reslut = Reslut.fromJson(response.data);
     if(!reslut.response.hasMore){
-      return;
+      return;//如果没有数据就不继续了
     }
-    if(reslut.response.columns != null) {
-      columnList = reslut.response.columns;
-    }
-    lastKey = reslut.response.lastKey;
+    lastKey = reslut.response.lastKey;//更新lastkey
     setState(() {
       if (reslut.response.banners != null){
-        banners = reslut.response.banners;
+        banners = reslut.response.banners;//给轮播图赋值
       }
-      dataList.addAll(reslut.response.feeds);
-    });
-  }
-  void getColunmData()async{
-    Dio dio = new Dio();
-    Response response = await dio.get('http://app3.qdaily.com/app3/columns/index/${columnList[0].id}/0.json');
-    Reslut reslut = Reslut.fromJson(response.data);
-    setState(() {
-      dataList.insert(columnList[0].location,
-          {'id':columnList[0].id,'lastKey':reslut.response.lastKey,'feedList':reslut.response.feeds,'showType':columnList[0].showType});
-      columnList.removeAt(0);
+      List<dynamic>data = [];
+      data.addAll(reslut.response.feeds);
+      reslut.response.columns.forEach((MyColumn colunm){
+        data.insert(colunm.location,  {'id':colunm.id,
+          'showType':colunm.showType});
+      });
+      dataList.addAll(data);//给数据源赋值
     });
   }
 
   _getListCount() {
-      ///如果有数据,因为部加载更多选项，需要对列表数据总数+1
+      ///如果有数据,最上面是轮播图最下面是加载loading动画，需要对列表数据总数+2
       return (dataList.length > 0) ? dataList.length + 2 : dataList.length + 1;
     }
-  final ScrollController _scrollController = new ScrollController();
   Future<void> _handleRefresh() {
     final Completer<void> completer = Completer<void>();
     Timer(const Duration(seconds: 1), () {
@@ -85,24 +73,21 @@ class _NewsState extends State<News> {
   Widget build(BuildContext context) {
     return RefreshIndicator(
       onRefresh:(()=> _handleRefresh()),
-      color: Colors.yellow,
+      color: Colors.yellow,//刷新控件的颜色
       child: ListView.separated(
         physics: const AlwaysScrollableScrollPhysics(),
-        itemCount: _getListCount(),
-        controller: _scrollController,
+        itemCount: _getListCount(),//item个数
+        controller: _scrollController,//用于监听是否滑到最底部
         itemBuilder: (context,index){
-          if(columnList.length > 0 && index == columnList[0].location){
-            getColunmData();
-          }
           if(index == 0){
-            return SwiperWidget(context, banners);
+            return SwiperWidget(context, banners);//如果是第一个,则展示banner
           }else if(index < dataList.length + 1){
-            return WidgetUtils.GetListWidget(context, dataList[index - 1]);
+            return WidgetUtils.GetListItemWidget(context, dataList[index - 1]);//展示数据
           }else {
-            return _buildProgressIndicator();
+            return _buildProgressIndicator();//展示加载loading框
           }
         },
-        separatorBuilder: (context,idx){
+        separatorBuilder: (context,idx){//分割线
           return Container(
             height: 5,
             color: Color.fromARGB(50,183, 187, 197),
@@ -127,8 +112,6 @@ Widget _buildProgressIndicator() {
       width: 5.0,
     ),
   ]);
-  /// 不需要加载
-
   return new Padding(
     padding: const EdgeInsets.all(20.0),
     child: new Center(
