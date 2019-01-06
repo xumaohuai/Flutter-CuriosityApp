@@ -6,6 +6,12 @@
 
 ![iOS](https://upload-images.jianshu.io/upload_images/1220329-62d314b156276dc8.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/368/format/webp)
 ![Android](https://upload-images.jianshu.io/upload_images/1220329-c7029e812f786c27.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/391/format/webp)
+![](https://upload-images.jianshu.io/upload_images/1220329-2aeb5f302e90080d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-15c08710c6749458.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-374dcb2ce43faabf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-7f1f971a9f589476.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-f204a0988ff15398.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-675c1fe530e3770a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 由于[flutter_webview_plugin](https://pub.dartlang.org/packages/flutter_webview_plugin)这个插件只支持加载url,于是就需要做一些修改.
 
