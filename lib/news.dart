@@ -47,10 +47,12 @@ class _NewsState extends State<News> {
       }
       List<dynamic>data = [];
       data.addAll(reslut.response.feeds);
-      reslut.response.columns.forEach((MyColumn colunm){
-        data.insert(colunm.location,  {'id':colunm.id,
-          'showType':colunm.showType});
-      });
+      if(reslut.response.columns != null) {
+        reslut.response.columns.forEach((MyColumn colunm) {
+          data.insert(colunm.location, {'id': colunm.id,
+            'showType': colunm.showType});
+        });
+      }
       dataList.addAll(data);//给数据源赋值
     });
   }
