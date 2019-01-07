@@ -8,12 +8,12 @@
 ![iOS效果图.gif](https://upload-images.jianshu.io/upload_images/1220329-d9aeb90fc255749e.gif?imageMogr2/auto-orient/strip)
 * Android效果图
 ![Android效果图.gif](https://upload-images.jianshu.io/upload_images/1220329-e329ec185551c4e4.gif?imageMogr2/auto-orient/strip)
-![](https://upload-images.jianshu.io/upload_images/1220329-5e57a13395f1bb6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+
+![](https://upload-images.jianshu.io/upload_images/1220329-5e57a13395f1bb6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](https://upload-images.jianshu.io/upload_images/1220329-efbdd5f0e13fcbdf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![](https://upload-images.jianshu.io/upload_images/1220329-0407bf1d19e7003f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 ![](https://upload-images.jianshu.io/upload_images/1220329-b97e694a7a98ff9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![](https://upload-images.jianshu.io/upload_images/1220329-715e253736f95258.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
