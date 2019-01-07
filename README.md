@@ -5,8 +5,11 @@
 #### 注意事项
 > 1.下载项目后报错是因为没有添加依赖,在pubspec.yaml文件中点击Packages get下载依赖,有时候会在这里出现卡死的情况,可以配置一下环境变量.在终端执行`vi ~/.bash_profile `,再添加`export PUB_HOSTED_URL=https://pub.flutter-io.cn`和
 `export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn`.详情请看[修改Flutter环境变量](https://flutter.io/community/china).
+
 >2.需要将File Encodings里的`Project Encoding设置为UTF-8`,否则有时候安卓会报错
+
 > 3.如果cocoapods不是最新可能会出现`Error Running Pod Install`,请更新cocoapods.
+
 > 4.由于[flutter_webview_plugin](https://pub.dartlang.org/packages/flutter_webview_plugin)这个插件只支持加载url,于是就需要做一些修改.
 >*   iOS 在`FlutterWebviewPlugin.m`文件中的`- (void)navigate:(FlutterMethodCall*)call`方法中的最后一排,将`[self.webview loadRequest:request]`方法改为`[self.webview loadHTMLString:url baseURL:nil]`
 >*   Android 在`WebViewManager.java`文件中`webView.loadUrl(url)`方法改为`webView.loadData(url, "text/html", "UTF-8")`,以及下面那排的`void reloadUrl(String url) { webView.loadUrl(url); }`改为`void reloadUrl(String url) { webView.loadData(url, "text/html", "UTF-8"); }`
