@@ -4,9 +4,7 @@
 # [Flutter实战详解--高仿好奇心日报](https://juejin.im/post/5c31f7236fb9a04a04412d0b)
 #### 示例图片
 
-* iOS效果图
 ![iOS效果图.gif](https://upload-images.jianshu.io/upload_images/1220329-d9aeb90fc255749e.gif?imageMogr2/auto-orient/strip)
-* Android效果图
 ![Android效果图.gif](https://upload-images.jianshu.io/upload_images/1220329-e329ec185551c4e4.gif?imageMogr2/auto-orient/strip)
 
 
