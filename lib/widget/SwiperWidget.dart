@@ -1,6 +1,7 @@
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_curiosity_app/model/model.dart';
+import 'package:flutter_curiosity_app/tool/WidgetUtils.dart';
 
 Widget SwiperWidget(BuildContext context,List<MyBanner> bannerList){
       Widget widget;
@@ -23,6 +24,9 @@ Widget SwiperWidget(BuildContext context,List<MyBanner> bannerList){
         pagination: new SwiperPagination(
           builder: builder,
         ),
+           onTap: (index){
+             WidgetUtils.pushToCuriosityWebView(context, bannerList[index].post.id);
+           },
       ) : Container(
            height: 200,
          );
