@@ -6,11 +6,15 @@
 
 ![iOS效果图.gif](https://upload-images.jianshu.io/upload_images/1220329-d9aeb90fc255749e.gif?imageMogr2/auto-orient/strip)
 ![Android效果图.gif](https://upload-images.jianshu.io/upload_images/1220329-e329ec185551c4e4.gif?imageMogr2/auto-orient/strip)
-![](https://upload-images.jianshu.io/upload_images/1220329-5e57a13395f1bb6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![](https://upload-images.jianshu.io/upload_images/1220329-efbdd5f0e13fcbdf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![](https://upload-images.jianshu.io/upload_images/1220329-0407bf1d19e7003f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![](https://upload-images.jianshu.io/upload_images/1220329-b97e694a7a98ff9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![](https://upload-images.jianshu.io/upload_images/1220329-715e253736f95258.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](https://upload-images.jianshu.io/upload_images/1220329-6213761c70c25366.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-250c5c7b013e66b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-131273bb45b1b79d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-712799e7e1f86f45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-587d0c87efcfdf3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-138e45f5633e2d5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1220329-53cae7d88c690973.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
 由于[flutter_webview_plugin](https://pub.dartlang.org/packages/flutter_webview_plugin)这个插件只支持加载url,于是就需要做一些修改.
