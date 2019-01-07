@@ -12,7 +12,7 @@
 
 > 4.由于[flutter_webview_plugin](https://pub.dartlang.org/packages/flutter_webview_plugin)这个插件只支持加载url,于是就需要做一些修改.
 >*   iOS 在`FlutterWebviewPlugin.m`文件中的`- (void)navigate:(FlutterMethodCall*)call`方法中的最后一排,将`[self.webview loadRequest:request]`方法改为`[self.webview loadHTMLString:url baseURL:nil]`
->*   Android 在`WebViewManager.java`文件中`webView.loadUrl(url)`方法改为`webView.loadData(url, "text/html", "UTF-8")`,以及下面那排的`void reloadUrl(String url) { webView.loadUrl(url); }`改为`void reloadUrl(String url) { webView.loadData(url, "text/html", "UTF-8"); }`
+>*   Android 在`WebViewManager.java`文件中`webView.loadUrl(url)`方法改为`webView.loadData(url, "text/html; charset=UTF-8", null);`,以及下面那排的`void reloadUrl(String url) { webView.loadUrl(url); }`改为`void reloadUrl(String url) { webView.loadData(url, "text/html; charset=UTF-8", null); }`
 # 相关文章
 # [Flutter实战详解--高仿好奇心日报](https://juejin.im/post/5c31f7236fb9a04a04412d0b)
 #### 示例图片
