@@ -38,7 +38,6 @@ class _ColumnsListWidgetState extends State<ColumnsListWidget> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    this.feedList = [];
     this.id = widget.id;
     this.showType = widget.showType;
     getColunmData();

@@ -1,25 +1,11 @@
 import 'BaseModuleWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_curiosity_app/model/model.dart';
-import 'package:flutter_curiosity_app/curiosityWebView.dart';
-import 'package:dio/dio.dart';
 
 Widget ListImageRight(
     BuildContext context, Feed feed) {
   Widget widget;
-  widget = new GestureDetector(
-    onTap: ()async{
-      Dio dio = new Dio();
-      Response response = await dio.get("http://app3.qdaily.com/app3/articles/detail/${feed.post.id}.json");
-      String htmlBody = Reslut.fromJson(response.data).response.article.body;
-      print('body = $htmlBody');
-      Navigator.push(context, MaterialPageRoute(
-
-          builder: (context)=>CuriosityWebView( htmlBody:htmlBody),
-      )
-      );
-    },
-      child: new Row(
+  widget = new Row(
         children: <Widget>[
           Container(
             width: 200,
@@ -52,7 +38,6 @@ Widget ListImageRight(
             ),
           ),
         ],
-      )
-  );
+      );
   return widget;
 }

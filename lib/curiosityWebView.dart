@@ -14,8 +14,6 @@ class _CuriosityWebViewState extends State<CuriosityWebView> {
   void initState() {
     super.initState();
     htmlBody = widget.htmlBody.replaceAll( '/assets/app3','http://app3.qdaily.com/assets/app3');
-    print('body = $htmlBody');
-//    getData();
   }
 
   @override
