@@ -22,8 +22,9 @@ Widget TitleLabel(BuildContext context,String text,{double fontSize = 15,int max
     style:TextStyle(
       fontSize: fontSize,
       color: Colors.black,
-      fontWeight: FontWeight.w500
+      fontWeight: FontWeight.w500,
     ) ,
+    overflow: TextOverflow.ellipsis,
     maxLines: maxLines,
   );
 }

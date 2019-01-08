@@ -16,7 +16,9 @@ class ColumnsListWidget extends StatefulWidget {
   _ColumnsListWidgetState createState() => _ColumnsListWidgetState();
 }
 
-class _ColumnsListWidgetState extends State<ColumnsListWidget> {
+class _ColumnsListWidgetState extends State<ColumnsListWidget> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   List<Feed> feedList = [];
   int lastKey = 0;
   int id ;
@@ -40,6 +42,7 @@ class _ColumnsListWidgetState extends State<ColumnsListWidget> {
     super.initState();
     this.id = widget.id;
     this.showType = widget.showType;
+    print('初始化');
     getColunmData();
     _scrollController.addListener(() {
       ///判断当前滑动位置是不是到达底部，触发加载更多回调

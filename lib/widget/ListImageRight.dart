@@ -15,7 +15,7 @@ Widget ListImageRight(
               children: <Widget>[
                 Container(
                   child: TitleLabel(context, feed.post.title),
-                  height: 80,
+                  height: 90,
                   padding: const EdgeInsets.all(10),
                   alignment: Alignment.topLeft,
                 ),
